@@ -10,6 +10,9 @@ Course from [MongoDB University](https://university.mongodb.com/courses/MongoDB/
 #### Multiple selectors in a find() command
     db.movieDetails.find({'rated':'PG-13','year':2013, 'awards.wins': 0},{"title":1, "_id":0}).pretty();
 
+#### Arrays with nested documents
+    {"awards.oscars.award":"bestPicture"}
+
 #### Simple projection
     {"title":1, "_id":0}
 
@@ -21,3 +24,16 @@ Course from [MongoDB University](https://university.mongodb.com/courses/MongoDB/
 
 #### Array operators
     db.movieDetails.find({"genres":{$all: ["Comedy","Crime"]}}).count();
+
+#### Updating based on multiple criteria
+    db.movieDetails.updateMany(
+      {$and: [
+        {
+          "imdb.votes": {$lt: 10000},
+          year: {$gte:2010, $lte:2013},
+          "tomato.consensus": {$exists: true, $eq: null}
+        }
+      ]
+      },
+      {$unset: {"tomato.consensus": ""}}
+    )
