@@ -20,7 +20,13 @@ Course from [MongoDB University](https://university.mongodb.com/courses/MongoDB/
     db.movieDetails.find({"countries.1":{$all: ["Sweden"]}}).limit(1).pretty();
 
 #### Equality queries
-    db.movieDetails.find({$and: [{"genres":{$size: 2}}, {"genres":{$all: ["Comedy", "Crime"]}}, {"genres.0": "Comedy"}]}).count();
+    db.movieDetails.find(
+      {$and: [
+        {"genres":{$size: 2}}, 
+        {"genres":{$all: ["Comedy", "Crime"]}}, 
+        {"genres.0": "Comedy"}
+      ]}
+    ).count();
 
 #### Array operators
     db.movieDetails.find({"genres":{$all: ["Comedy","Crime"]}}).count();
