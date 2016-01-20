@@ -2,10 +2,10 @@
 
 Course from [MongoDB University](https://university.mongodb.com/courses/MongoDB/M101JS/2016_January/syllabus)
 
-### 09.01.2016
+### HW - Week 1
 - hw1-1, hw1-2, hw1-3 done
 
-### 13.01.2015
+### HW - Week 2
 
 #### Multiple selectors in a find() command
     db.movieDetails.find({'rated':'PG-13','year':2013, 'awards.wins': 0},{"title":1, "_id":0}).pretty();
