@@ -22,8 +22,8 @@ Course from [MongoDB University](https://university.mongodb.com/courses/MongoDB/
 #### Equality queries
     db.movieDetails.find(
       {$and: [
-        {"genres":{$size: 2}}, 
-        {"genres":{$all: ["Comedy", "Crime"]}}, 
+        {"genres":{$size: 2}},
+        {"genres":{$all: ["Comedy", "Crime"]}},
         {"genres.0": "Comedy"}
       ]}
     ).count();
@@ -43,3 +43,17 @@ Course from [MongoDB University](https://university.mongodb.com/courses/MongoDB/
       },
       {$unset: {"tomato.consensus": ""}}
     )
+
+#### Homework 3.2
+Import dataset from [grades.json](grades.json)
+
+    db.grades.find().skip(6).limit(2).sort({"grade":1})
+
+    { "_id" : 14, "student" : "Seamus", "grade" : 33, "assignment" : "exam" }
+    { "_id" : 13, "student" : "Bob", "grade" : 37, "assignment" : "exam" }
+
+#### Homework 3.3
+run [buildingQueryDocuments.js](buildingQueryDocuments.js)
+
+#### Homework 3.4
+run [overviewOrTags.js](overviewOrTags.js) 
