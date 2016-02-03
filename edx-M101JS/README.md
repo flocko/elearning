@@ -44,6 +44,8 @@ Course from [MongoDB University](https://university.mongodb.com/courses/MongoDB/
       {$unset: {"tomato.consensus": ""}}
     )
 
+### Week 3
+
 #### Homework 3.2
 Import dataset from [grades.json](grades.json)
 
@@ -57,3 +59,7 @@ run [buildingQueryDocuments.js](buildingQueryDocuments.js)
 
 #### Homework 3.4
 run [overviewOrTags.js](overviewOrTags.js) 
+
+
+### Week 4
+03.02.2016 - 4.1, 4.2, 4.3 done
