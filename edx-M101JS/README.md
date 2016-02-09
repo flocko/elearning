@@ -63,3 +63,10 @@ run [overviewOrTags.js](overviewOrTags.js)
 
 ### Week 4
 03.02.2016 - 4.1, 4.2, 4.3 done
+
+### Week 5
+
+#### Homework 5.3
+Analyze profile log
+
+    db.profile.find({"ns":"school2.students"},{"millis": 1}).sort({"millis":-1}).limit(1);
